@@ -1,0 +1,43 @@
+<script lang="ts" setup>
+
+</script>
+
+<template>
+    <section :class="cssClasses">
+        <slot></slot>
+    </section>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+    props: {
+        size: String,
+    },
+    computed: {
+        /**
+         * Returns the needed css classes based on the given size
+         */
+        cssClasses() {
+            const cssClasses = ['p-5', 'rounded-3xl', 'bg-gray-300'];
+
+            switch (this.size) {
+                case 's':
+                    cssClasses.push('aspect-square');
+                    break;
+                case 'm':
+                    break;
+                case 'l':
+                    cssClasses.push('col-span-2');
+                    break;
+                case 'xl':
+                    cssClasses.push('row-span-2', 'col-span-2', 'aspect-square');
+                    break;
+            }
+
+            return cssClasses;
+        }
+    }
+});
+</script>
