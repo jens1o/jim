@@ -20,7 +20,7 @@ export default defineComponent({
          * Returns the needed css classes based on the given size
          */
         cssClasses() {
-            const cssClasses = ['p-5', 'rounded-3xl', 'bg-gray-300'];
+            const cssClasses = ['p-2', 'rounded-3xl', 'bg-white'];
 
             switch (this.size) {
                 case 's':

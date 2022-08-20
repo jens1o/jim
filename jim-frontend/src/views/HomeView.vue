@@ -1,20 +1,23 @@
 <script setup lang="ts">
 import HomeTile from '../components/HomeTile.vue';
+import WeatherTile from '../components/WeatherTile.vue';
+import BalanceTile from '../components/BalanceTile.vue';
+import EventAndHabitsTile from '../components/EventAndHabitsTile.vue';
 </script>
 
 <template>
-  <main class="grid grid-cols-3 md:grid-cols-7 gap-6 auto-cols-fr auto-rows-fr">
+  <main class="grid grid-cols-3 md:grid-cols-7 gap-3 auto-cols-fr auto-rows-fr">
     <HomeTile size="xl">
       map container
     </HomeTile>
     <HomeTile size="s">
-      weather
+      <WeatherTile />
     </HomeTile>
     <HomeTile size="s">
-      balance
+      <BalanceTile />
     </HomeTile>
     <HomeTile size="l">
-      events and habits
+      <EventAndHabitsTile />
     </HomeTile>
     <HomeTile size="l">
       ...
