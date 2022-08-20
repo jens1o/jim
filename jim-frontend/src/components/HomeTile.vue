@@ -27,12 +27,13 @@ export default defineComponent({
                     cssClasses.push('aspect-square');
                     break;
                 case 'm':
+                    cssClasses.push('bg-red-500');
                     break;
                 case 'l':
                     cssClasses.push('col-span-2');
                     break;
                 case 'xl':
-                    cssClasses.push('row-span-2', 'col-span-2', 'aspect-square');
+                    cssClasses.push('row-span-2', 'col-span-2');
                     break;
             }
 

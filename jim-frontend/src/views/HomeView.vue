@@ -3,7 +3,7 @@ import HomeTile from '../components/HomeTile.vue';
 </script>
 
 <template>
-  <main class="grid grid-cols-3 md:grid-cols-6 gap-5">
+  <main class="grid grid-cols-3 md:grid-cols-7 gap-6 auto-cols-fr auto-rows-fr">
     <HomeTile size="xl">
       map container
     </HomeTile>
