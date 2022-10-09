@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import { useAppBackgroundStore } from "./stores/appBackground";
+import { useAppTitleStore } from "./stores/appTitle";
 import HomeIcon from "./components/icons/HomeIcon.vue";
 import PeopleIcon from "./components/icons/PeopleIcon.vue";
 import ClockIcon from "./components/icons/ClockIcon.vue";
@@ -9,6 +10,7 @@ import WalletIcon from "./components/icons/WalletIcon.vue";
 import CardIcon from "./components/icons/CardIcon.vue";
 
 const appBackground = useAppBackgroundStore();
+const appTitle = useAppTitleStore();
 </script>
 
 <template>
@@ -17,14 +19,14 @@ const appBackground = useAppBackgroundStore();
   }">
     <header class="mx-auto my-8 max-w-screen-2xl">
       <h1 class="text-3xl font-sans font-thin text-white">
-        Good morning, Jens
+        {{ appTitle.title }}
       </h1>
     </header>
 
-    <RouterView class="pb-15 max-w-screen-2xl mx-auto" />
+    <RouterView class="pb-16 max-w-screen-2xl mx-auto" />
 
     <footer class="max-w-screen-2xl mx-auto bg-white w-full h-16 rounded-t-3xl fixed bottom-0 left-0 right-0 px-4">
-      <nav class="grid grid-rows-1 grid-cols-6 h-full place-items-center text-gray-500">
+      <nav class="grid grid-rows-1 grid-cols-6 h-full place-items-center text-gray-300">
         <RouterLink to="/" activeClass="text-black">
           <HomeIcon class="h-full w-8" />
         </RouterLink>
