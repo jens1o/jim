@@ -8,7 +8,7 @@ import Expense from '../components/Expense.vue';
     <section class="rounded my-8">
         <ol>
             <li v-for="expenseData of getExpenses()">
-                <Expense :amount="expenseData.amount" :datetime="expenseData.datetime" :purpose="expenseData.purpose" />
+                <Expense :amount="expenseData.amount" :datetime="expenseData.datetime" :label="expenseData.label" />
             </li>
         </ol>
     </section>
@@ -18,7 +18,7 @@ import Expense from '../components/Expense.vue';
 import { useAppTitleStore } from '@/stores/appTitle';
 import { defineComponent } from 'vue';
 
-type TExpense = { amount: number, datetime: string, purpose: string };
+type TExpense = { amount: number, datetime: string, label: string };
 
 export default defineComponent({
     methods: {
@@ -30,8 +30,7 @@ export default defineComponent({
                 expenses.push({
                     amount: Number((Math.random() * 200 - 100).toFixed(2)),
                     datetime: new Date().toISOString(),
-                    // TODO: Is "purpose" fitting here or should it get renamed?
-                    purpose: `Expense ${i}`
+                    label: `Expense ${i}`
                 });
             }
 
